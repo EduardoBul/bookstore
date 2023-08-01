@@ -1,10 +1,10 @@
 class BooksController < ApplicationController
   before_action :set_book, only: %i[ show edit update destroy ]
-  before_action :set_autor
+  before_action :set_author
 
   # GET /books or /books.json
   def index
-    #@autor = Author.find(params[:autor_id])
+    #@author = Author.find(params[:author_id])
     @books = @author.books
   end
 
@@ -65,7 +65,7 @@ class BooksController < ApplicationController
       @book = Book.find(params[:id])
     end
 
-    def set_autor
+    def set_author
       @author = Author.find(params[:author_id])
     end
 
